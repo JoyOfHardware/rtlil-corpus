@@ -1,0 +1,3 @@
+[submodule "amaranth"]
+	path = amaranth
+	url = git@github.com:amaranth-lang/amaranth.git
