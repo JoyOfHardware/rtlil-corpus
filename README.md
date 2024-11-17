@@ -3,10 +3,12 @@
 Generate a corpus of `rtlil` sources that make for good
 reference material for compiler development.
 
+The generated corpus should be 100% repeatable.
+
 # Running
 
 ```bash
-git clone git@github.com:ThePerfectComputer/rtlil-corpus.git
+git clone --recursive git@github.com:ThePerfectComputer/rtlil-corpus.git
 cd rtlil-corpus
 nix-shell
 ```
