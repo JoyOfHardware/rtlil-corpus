@@ -20,7 +20,7 @@ for file in os.listdir(verilog_dir):
     if file.endswith(".v"):
         file_path = os.path.join(verilog_dir, file)
         base_name = os.path.splitext(file)[0]  # Get the base name without the extension
-        output_file = os.path.join(output_dir, f"{base_name}.rtlil")
+        output_file = os.path.join(output_dir, f"{base_name}.il")
 
         # Run the yosys command
         yosys_command = f"yosys -p\"read_verilog {file_path}; write_rtlil {output_file}\""
