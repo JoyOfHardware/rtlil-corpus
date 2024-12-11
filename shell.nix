@@ -5,8 +5,10 @@
 pkgs.mkShell {
   buildInputs = [ 
     pkgs.python312Packages.amaranth
+    pkgs.yosys
     ];
   shellHook = ''
-    ./mkcorpus.sh
+    python3 rtlil_from_amaranth_examples.py --outdir ./corpus
+    python3 rtlil_from_vexriscv_sources.py --outdir ./corpus
   '';
 }

@@ -1,3 +1,6 @@
 [submodule "amaranth"]
 	path = amaranth
 	url = git@github.com:amaranth-lang/amaranth.git
+[submodule "VexRiscv-verilog"]
+	path = VexRiscv-verilog
+	url = git@github.com:m-labs/VexRiscv-verilog.git

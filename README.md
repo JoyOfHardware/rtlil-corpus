@@ -3,7 +3,7 @@
 Generate a corpus of `rtlil` sources that make for good
 reference material for compiler development.
 
-The generated corpus should be 100% repeatable.
+The generated corpus should be 100% reproducible.
 
 # Running
 
