@@ -5,15 +5,14 @@ import argparse
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Process Verilog files to RTLIL format.")
 parser.add_argument("--outdir", required=True, help="Output directory for generated RTLIL files.")
+parser.add_argument("--verilog", default="VexRiscv-verilog", required=False, help="Path to verilog dir.")
 args = parser.parse_args()
 
+verilog_dir = args.verilog
 output_dir = args.outdir
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
-
-# Directory containing Verilog files
-verilog_dir = "VexRiscv-verilog"
 
 # Iterate over all .v files in the Verilog directory
 for file in os.listdir(verilog_dir):

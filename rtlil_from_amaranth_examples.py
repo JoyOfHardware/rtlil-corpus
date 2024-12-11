@@ -5,8 +5,10 @@ import argparse
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Process RTLIL files.")
 parser.add_argument("--outdir", required=True, help="Output directory for generated RTLIL files.")
+parser.add_argument("--amaranth", default="amaranth", required=False, help="Path to amaranth dir.")
 args = parser.parse_args()
 
+amaranth_dir = args.amaranth
 output_dir = args.outdir
 
 # Enable extended debug output
@@ -19,12 +21,12 @@ os.makedirs(output_dir, exist_ok=True)
 
 # List of files to skip
 skip_files = [
-    "amaranth/examples/basic/ctr_en.py",
-    "amaranth/examples/basic/uart.py"
+    f"{amaranth_dir}/examples/basic/ctr_en.py",
+    f"{amaranth_dir}/examples/basic/uart.py"
 ]
 
 # Iterate over all .py files in the directory
-example_dir = "amaranth/examples/basic"
+example_dir = f"{amaranth_dir}/examples/basic"
 for file in os.listdir(example_dir):
     if file.endswith(".py"):
         file_path = os.path.join(example_dir, file)
